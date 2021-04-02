@@ -14,8 +14,8 @@ export default function SigninScreen(props) {
             Axios
                 .post('https://learning-management-project.herokuapp.com/api/users/signin', { email, password })
                 .then(res => {
-                    localStorage.setItem('userInfo', JSON.stringify(res.profileObj));
-                    localStorage.setItem('username', (res.profileObj.name));
+                    localStorage.setItem('userInfo', JSON.stringify(res.data));
+                    localStorage.setItem('username', (res.data.name));
                     window.location = '/about'
                 })
         } else {
@@ -24,7 +24,7 @@ export default function SigninScreen(props) {
     };
 
     const responseGoogle = res => {
-        localStorage.setItem('userInfo', JSON.stringify(res));
+        localStorage.setItem('userInfo', JSON.stringify(res.profileObj));
         localStorage.setItem('username', (res.profileObj.name));
         window.location = '/about'
     }
