@@ -24,8 +24,10 @@ export default function SigninScreen(props) {
     };
 
     const responseGoogle = res => {
-        localStorage.setItem('userInfo', JSON.stringify(res.profileObj));
-        localStorage.setItem('username', (res.profileObj.name));
+        const data = (res)
+        const name = (res.profileObj.name)
+        localStorage.setItem('userInfo', JSON.stringify(data));
+        localStorage.setItem('username', (name));
         window.location = '/about'
     }
 
