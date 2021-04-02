@@ -21,7 +21,8 @@ export default function SignupScreen() {
                 .then(res => {
                     localStorage.setItem('userInfo', JSON.stringify(res.data));
                     localStorage.setItem('username', (res.data.name));
-                    window.location = '/about'
+                    window.location = '/'
+                    alert("Successfully Registered")
                 })
         } else {
             alert('Password and confirm password are not match');
@@ -33,7 +34,8 @@ export default function SignupScreen() {
         const name = (res.profileObj.name)
         localStorage.setItem('userInfo', JSON.stringify(data));
         localStorage.setItem('username', (name));
-        window.location = '/about'
+        window.location = '/'
+        alert("Successfully Login")
     }
     return (
         <section className='signin center-middle' >

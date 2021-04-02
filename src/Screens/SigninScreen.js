@@ -16,7 +16,8 @@ export default function SigninScreen(props) {
                 .then(res => {
                     localStorage.setItem('userInfo', JSON.stringify(res.data));
                     localStorage.setItem('username', (res.data.name));
-                    window.location = '/about'
+                    window.location = '/'
+                    alert("Successfully Login")
                 })
         } else {
             alert("Enter valid details")
@@ -28,7 +29,8 @@ export default function SigninScreen(props) {
         const name = (res.profileObj.name)
         localStorage.setItem('userInfo', JSON.stringify(data));
         localStorage.setItem('username', (name));
-        window.location = '/about'
+        window.location = '/'
+        alert("Successfully Login")
     }
 
     return (

@@ -14,6 +14,7 @@ export default function App() {
                     <Route path="/signup" component={SignupScreen}  ></Route>
                     <Route exact path="/" component={SigninScreen}  ></Route>
                     {localStorage.getItem('userInfo') ? <Route path='/about' component={About} /> : <Redirect to="/" />}
+                    {/* {localStorage.getItem('userInfo') ? <Redirect to="/about" /> : <Redirect to="/" />} */}
                 </main>
                 <footer className=" center row"> All right reserved</footer>
             </div>
